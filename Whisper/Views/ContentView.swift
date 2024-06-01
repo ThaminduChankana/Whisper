@@ -12,11 +12,14 @@ struct ContentView: View {
     @State private var age: Int = 0
     @State private var selectedGender: Gender = .boy
     @State private var selectedStoryCategory: StoryCategory = .fairyTales
-    @State private var selectedTimeline: Timeline = .present
+    @State private var selectedTimeline: Timeline = .kingdom
     @State private var selectedMood: Mood = .happy
     @State private var generatedStory: String = ""
     @State private var isGenerating: Bool = false
     @State private var shouldNavigate: Bool = false
+    
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
     
     let storyGenerator = StoryGenerator()
     
@@ -26,6 +29,8 @@ struct ContentView: View {
                 Form {
                     Section(header: Text("Child's Details")) {
                         TextField("Child's Name", text: $childName)
+                            .autocapitalization(.words)
+                            .disableAutocorrection(true)
                         Picker("Age", selection: $age) {
                             ForEach(0..<11) { age in
                                 Text("\(age) years")
@@ -86,27 +91,42 @@ struct ContentView: View {
             .navigationDestination(isPresented: $shouldNavigate) {
                 StoryView(story: generatedStory)
             }
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Validation Failed !").bold(), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            }
         }
     }
     
     func generateStory() {
-        isGenerating = true
-        let userInput = UserInput(
-            childName: childName,
-            age: Int(age),
-            gender: selectedGender,
-            storyCategory: selectedStoryCategory,
-            timeline: selectedTimeline,
-            mood: selectedMood
-        )
-        
-        storyGenerator.generateStory(for: userInput) { story in
-            DispatchQueue.main.async {
-                self.generatedStory = story ?? "Failed to generate story."
-                self.isGenerating = false
-                self.shouldNavigate = true
+        if validateInput() {
+            isGenerating = true
+            let userInput = UserInput(
+                childName: childName,
+                age: Int(age),
+                gender: selectedGender,
+                storyCategory: selectedStoryCategory,
+                timeline: selectedTimeline,
+                mood: selectedMood
+            )
+            
+            storyGenerator.generateStory(for: userInput) { story in
+                DispatchQueue.main.async {
+                    self.generatedStory = story ?? "Failed to generate story."
+                    self.isGenerating = false
+                    self.shouldNavigate = true
+                }
             }
         }
+    }
+    
+    func validateInput() -> Bool {
+        if childName.trimmingCharacters(in: .whitespaces).isEmpty {
+            alertMessage = "Please enter the child's name."
+            showingAlert = true
+            return false
+        }
+        
+        return true
     }
 }
 
