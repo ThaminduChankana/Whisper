@@ -13,7 +13,7 @@ struct DashboardView: View {
             GeometryReader { geometry in
                 ScrollView {
                     VStack(spacing: 30) {
-                        Text("Whisper Board")
+                        Text("Whisper Space")
                             .font(.largeTitle)
                             .padding(.top, 15)
 
