@@ -15,11 +15,11 @@ struct DashboardView: View {
                     VStack(spacing: 30) {
                         Text("Whisper Board")
                             .font(.largeTitle)
-                            .padding(.top, 20)
+                            .padding(.top, 15)
 
                         if geometry.size.width > geometry.size.height {
                             // Landscape layout
-                            HStack(spacing: 20) {
+                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
                                 NavigationLink(destination: StoriesView()) {
                                     DashboardTile(title: "Stories", animationName: "reading")
                                 }

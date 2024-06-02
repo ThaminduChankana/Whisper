@@ -56,6 +56,7 @@
 		51AD17DC2C0C951200B59F83 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AD17DB2C0C951200B59F83 /* MusicManager.swift */; };
 		51AD17E32C0CBEFC00B59F83 /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AD17E22C0CBEFC00B59F83 /* MusicView.swift */; };
 		51AD17E92C0CC39800B59F83 /* listenning.json in Resources */ = {isa = PBXBuildFile; fileRef = 51AD17E82C0CC39800B59F83 /* listenning.json */; };
+		51AD17EB2C0CD21000B59F83 /* music_player.json in Resources */ = {isa = PBXBuildFile; fileRef = 51AD17EA2C0CD21000B59F83 /* music_player.json */; };
 		51F7067B2C0C340600BA76D0 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F7067A2C0C340600BA76D0 /* DashboardView.swift */; };
 		51F7067D2C0C3CF000BA76D0 /* writing.json in Resources */ = {isa = PBXBuildFile; fileRef = 51F7067C2C0C3CF000BA76D0 /* writing.json */; };
 		51F706812C0C40CF00BA76D0 /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = 51F706802C0C40CF00BA76D0 /* list.json */; };
@@ -122,6 +123,7 @@
 		51AD17DB2C0C951200B59F83 /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
 		51AD17E22C0CBEFC00B59F83 /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
 		51AD17E82C0CC39800B59F83 /* listenning.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = listenning.json; sourceTree = "<group>"; };
+		51AD17EA2C0CD21000B59F83 /* music_player.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = music_player.json; sourceTree = "<group>"; };
 		51F7067A2C0C340600BA76D0 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		51F7067C2C0C3CF000BA76D0 /* writing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = writing.json; sourceTree = "<group>"; };
 		51F706802C0C40CF00BA76D0 /* list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 		5182BF072C0BB5E80019E43C /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				51AD17EA2C0CD21000B59F83 /* music_player.json */,
 				51AD17E82C0CC39800B59F83 /* listenning.json */,
 				51F706842C0C44B500BA76D0 /* reading.json */,
 				51F706802C0C40CF00BA76D0 /* list.json */,
@@ -453,6 +456,7 @@
 				51AD17D32C0C925300B59F83 /* music_13.mp3 in Resources */,
 				51AD17CC2C0C925300B59F83 /* music_7.mp3 in Resources */,
 				51AD17CF2C0C925300B59F83 /* music_3.mp3 in Resources */,
+				51AD17EB2C0CD21000B59F83 /* music_player.json in Resources */,
 				51F7067D2C0C3CF000BA76D0 /* writing.json in Resources */,
 				51AD17DA2C0C940D00B59F83 /* music_1.mp3 in Resources */,
 				51AD17D62C0C92E700B59F83 /* music_2.mp3 in Resources */,
