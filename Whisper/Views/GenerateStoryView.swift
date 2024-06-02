@@ -1,13 +1,14 @@
 //
-//  ContentView.swift
+//  GenerateStoryView.swift
 //  Whisper
 //
 //  Created by Thamindu Gamage on 2024-06-01.
 //
 
 import SwiftUI
+import CoreData
 
-struct ContentView: View {
+struct GenerateStoryView: View {
     @State private var childName: String = ""
     @State private var age: Int = 0
     @State private var selectedGender: Gender = .boy
@@ -22,6 +23,7 @@ struct ContentView: View {
     @State private var alertMessage = ""
     
     let storyGenerator = StoryGenerator()
+    @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
         NavigationStack {
@@ -83,16 +85,16 @@ struct ContentView: View {
                             .padding()
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(.systemBackground).opacity(0.9))
+                    .background(Color(.systemBackground))
                     .edgesIgnoringSafeArea(.all)
                 }
             }
-            .navigationTitle("Whisper")
+            .navigationTitle("Generate Story")
             .navigationDestination(isPresented: $shouldNavigate) {
                 StoryView(story: generatedStory)
             }
             .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Validation Failed !").bold(), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                Alert(title: Text("Validation Failed!").bold(), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
         }
     }
@@ -111,7 +113,12 @@ struct ContentView: View {
             
             storyGenerator.generateStory(for: userInput) { story in
                 DispatchQueue.main.async {
-                    self.generatedStory = story ?? "Failed to generate story."
+                    if let story = story {
+                        self.generatedStory = story
+                        self.saveStory(title: self.extractTitle(from: story) ?? "Untitled", content: story)
+                    } else {
+                        self.generatedStory = "Failed to generate story."
+                    }
                     self.isGenerating = false
                     self.shouldNavigate = true
                 }
@@ -128,8 +135,36 @@ struct ContentView: View {
         
         return true
     }
+    
+    func saveStory(title: String, content: String) {
+        let newStory = Story(context: viewContext)
+        newStory.title = title
+        newStory.content = content
+        newStory.createdAt = Date()
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print("Failed to save story: \(error)")
+        }
+    }
+    
+    private func extractTitle(from story: String) -> String? {
+        let titlePrefixes = ["Title:", "Title-", "title:-", "title:", "title-", "title:-"]
+        for prefix in titlePrefixes {
+            if let range = story.range(of: prefix, options: .caseInsensitive) {
+                let remainingStory = story[range.upperBound...]
+                if let endRange = remainingStory.range(of: "\n\n") {
+                    var title = remainingStory[..<endRange.lowerBound].trimmingCharacters(in: .whitespacesAndNewlines)
+                    title = title.replacingOccurrences(of: ":", with: "").replacingOccurrences(of: "-", with: "")
+                    return String(title)
+                }
+            }
+        }
+        return nil
+    }
 }
 
 #Preview {
-    ContentView()
+    GenerateStoryView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }

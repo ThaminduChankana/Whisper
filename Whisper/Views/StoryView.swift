@@ -11,7 +11,7 @@ struct StoryView: View {
     let story: String
 
     var body: some View {
-        return ScrollView {
+        ScrollView {
             VStack(alignment: .center, spacing: 10) {
                 if let title = extractTitle(from: story) {
                     Text(title)
@@ -23,7 +23,8 @@ struct StoryView: View {
             }
             .padding()
         }
-        .navigationTitle("Your Story !")
+        .navigationTitle("Your Story!")
+        .navigationBarBackButtonHidden(false)
     }
 
     private func extractTitle(from story: String) -> String? {
@@ -33,7 +34,6 @@ struct StoryView: View {
                 let remainingStory = story[range.upperBound...]
                 if let endRange = remainingStory.range(of: "\n\n") {
                     var title = remainingStory[..<endRange.lowerBound].trimmingCharacters(in: .whitespacesAndNewlines)
-                    // Clean up any remaining symbols or colons
                     title = title.replacingOccurrences(of: ":", with: "").replacingOccurrences(of: "-", with: "")
                     return String(title)
                 }
@@ -43,7 +43,6 @@ struct StoryView: View {
     }
 
     private func extractStoryBody(from story: String) -> String {
-        // Remove the title and return the remaining story body
         let titlePrefixes = ["Title:", "Title-", "title:-", "title:", "title-", "title:-"]
         for prefix in titlePrefixes {
             if let range = story.range(of: prefix, options: .caseInsensitive) {
@@ -58,5 +57,5 @@ struct StoryView: View {
 }
 
 #Preview {
-    StoryView(story: "Your Story !")
+    StoryView(story: "Your Story!")
 }

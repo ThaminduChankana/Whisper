@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		514B54392C0BBA4D00EC906C /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = 514B54382C0BBA4D00EC906C /* book.json */; };
+		514B543B2C0BBDAC00EC906C /* GenerateStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B543A2C0BBDAC00EC906C /* GenerateStoryView.swift */; };
 		5182BED42C0BB5750019E43C /* WhisperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5182BED32C0BB5750019E43C /* WhisperApp.swift */; };
 		5182BED62C0BB5750019E43C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5182BED52C0BB5750019E43C /* ContentView.swift */; };
 		5182BED82C0BB5770019E43C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5182BED72C0BB5770019E43C /* Assets.xcassets */; };
@@ -23,6 +24,12 @@
 		5182BF122C0BB73A0019E43C /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5182BF112C0BB73A0019E43C /* DataModels.swift */; };
 		5182BF142C0BB76B0019E43C /* GPTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5182BF132C0BB76B0019E43C /* GPTService.swift */; };
 		5182BF162C0BB7830019E43C /* StoryGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5182BF152C0BB7830019E43C /* StoryGenerator.swift */; };
+		519AD6292C0C4A3F00135F14 /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519AD6282C0C4A3F00135F14 /* StoriesView.swift */; };
+		519AD62B2C0C4AAD00135F14 /* YourStoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519AD62A2C0C4AAD00135F14 /* YourStoriesView.swift */; };
+		51F7067B2C0C340600BA76D0 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F7067A2C0C340600BA76D0 /* DashboardView.swift */; };
+		51F7067D2C0C3CF000BA76D0 /* writing.json in Resources */ = {isa = PBXBuildFile; fileRef = 51F7067C2C0C3CF000BA76D0 /* writing.json */; };
+		51F706812C0C40CF00BA76D0 /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = 51F706802C0C40CF00BA76D0 /* list.json */; };
+		51F706852C0C44B500BA76D0 /* reading.json in Resources */ = {isa = PBXBuildFile; fileRef = 51F706842C0C44B500BA76D0 /* reading.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		514B54382C0BBA4D00EC906C /* book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
+		514B543A2C0BBDAC00EC906C /* GenerateStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateStoryView.swift; sourceTree = "<group>"; };
 		5182BED02C0BB5750019E43C /* Whisper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whisper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5182BED32C0BB5750019E43C /* WhisperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperApp.swift; sourceTree = "<group>"; };
 		5182BED52C0BB5750019E43C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +69,12 @@
 		5182BF112C0BB73A0019E43C /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		5182BF132C0BB76B0019E43C /* GPTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTService.swift; sourceTree = "<group>"; };
 		5182BF152C0BB7830019E43C /* StoryGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryGenerator.swift; sourceTree = "<group>"; };
+		519AD6282C0C4A3F00135F14 /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
+		519AD62A2C0C4AAD00135F14 /* YourStoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourStoriesView.swift; sourceTree = "<group>"; };
+		51F7067A2C0C340600BA76D0 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		51F7067C2C0C3CF000BA76D0 /* writing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = writing.json; sourceTree = "<group>"; };
+		51F706802C0C40CF00BA76D0 /* list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
+		51F706842C0C44B500BA76D0 /* reading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reading.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +132,7 @@
 				5182BF032C0BB5B50019E43C /* Helpers */,
 				5182BF022C0BB5A90019E43C /* Views */,
 				5182BED32C0BB5750019E43C /* WhisperApp.swift */,
+				5182BED52C0BB5750019E43C /* ContentView.swift */,
 				5182BED72C0BB5770019E43C /* Assets.xcassets */,
 				5182BEDC2C0BB5770019E43C /* Persistence.swift */,
 				5182BEDE2C0BB5770019E43C /* Whisper.xcdatamodeld */,
@@ -154,8 +169,11 @@
 		5182BF022C0BB5A90019E43C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5182BED52C0BB5750019E43C /* ContentView.swift */,
 				5182BF0F2C0BB70F0019E43C /* StoryView.swift */,
+				514B543A2C0BBDAC00EC906C /* GenerateStoryView.swift */,
+				51F7067A2C0C340600BA76D0 /* DashboardView.swift */,
+				519AD6282C0C4A3F00135F14 /* StoriesView.swift */,
+				519AD62A2C0C4AAD00135F14 /* YourStoriesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,6 +190,7 @@
 		5182BF042C0BB5C40019E43C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				519AD62C2C0C4DCA00135F14 /* Entities */,
 				5182BF112C0BB73A0019E43C /* DataModels.swift */,
 			);
 			path = Models;
@@ -196,9 +215,19 @@
 		5182BF072C0BB5E80019E43C /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				51F706842C0C44B500BA76D0 /* reading.json */,
+				51F706802C0C40CF00BA76D0 /* list.json */,
+				51F7067C2C0C3CF000BA76D0 /* writing.json */,
 				514B54382C0BBA4D00EC906C /* book.json */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		519AD62C2C0C4DCA00135F14 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,8 +340,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51F706852C0C44B500BA76D0 /* reading.json in Resources */,
+				51F7067D2C0C3CF000BA76D0 /* writing.json in Resources */,
 				514B54392C0BBA4D00EC906C /* book.json in Resources */,
 				5182BEDB2C0BB5770019E43C /* Preview Assets.xcassets in Resources */,
+				51F706812C0C40CF00BA76D0 /* list.json in Resources */,
 				5182BED82C0BB5770019E43C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,12 +371,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5182BF102C0BB70F0019E43C /* StoryView.swift in Sources */,
+				514B543B2C0BBDAC00EC906C /* GenerateStoryView.swift in Sources */,
 				5182BEDD2C0BB5770019E43C /* Persistence.swift in Sources */,
 				5182BED62C0BB5750019E43C /* ContentView.swift in Sources */,
 				5182BF0B2C0BB63F0019E43C /* LottieView.swift in Sources */,
 				5182BF122C0BB73A0019E43C /* DataModels.swift in Sources */,
+				51F7067B2C0C340600BA76D0 /* DashboardView.swift in Sources */,
+				519AD62B2C0C4AAD00135F14 /* YourStoriesView.swift in Sources */,
 				5182BF162C0BB7830019E43C /* StoryGenerator.swift in Sources */,
 				5182BEE02C0BB5770019E43C /* Whisper.xcdatamodeld in Sources */,
+				519AD6292C0C4A3F00135F14 /* StoriesView.swift in Sources */,
 				5182BED42C0BB5750019E43C /* WhisperApp.swift in Sources */,
 				5182BF142C0BB76B0019E43C /* GPTService.swift in Sources */,
 			);
