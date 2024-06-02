@@ -10,25 +10,50 @@ import SwiftUI
 struct DashboardView: View {
     var body: some View {
         NavigationStack {
-            VStack(spacing: 30) {
-                Text("Whisper Board")
-                    .font(.largeTitle)
-                    .padding(.top, 20)
+            GeometryReader { geometry in
+                ScrollView {
+                    VStack(spacing: 30) {
+                        Text("Whisper Board")
+                            .font(.largeTitle)
+                            .padding(.top, 20)
 
-                NavigationLink(destination: StoriesView()) {
-                    DashboardTile(title: "Stories", animationName: "reading")
+                        if geometry.size.width > geometry.size.height {
+                            // Landscape layout
+                            HStack(spacing: 20) {
+                                NavigationLink(destination: StoriesView()) {
+                                    DashboardTile(title: "Stories", animationName: "reading")
+                                }
+                                
+                                NavigationLink(destination: GenerateStoryView()) {
+                                    DashboardTile(title: "Create Story", animationName: "writing")
+                                }
+                                
+                                NavigationLink(destination: YourStoriesView()) {
+                                    DashboardTile(title: "Your Stories", animationName: "list")
+                                }
+                            }
+                            .padding(.horizontal)
+                        } else {
+                            // Portrait layout
+                            VStack(spacing: 20) {
+                                NavigationLink(destination: StoriesView()) {
+                                    DashboardTile(title: "Stories", animationName: "reading")
+                                }
+                                
+                                NavigationLink(destination: GenerateStoryView()) {
+                                    DashboardTile(title: "Create Story", animationName: "writing")
+                                }
+                                
+                                NavigationLink(destination: YourStoriesView()) {
+                                    DashboardTile(title: "Your Stories", animationName: "list")
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                    }
+                    .padding()
                 }
-
-                NavigationLink(destination: GenerateStoryView()) {
-                    DashboardTile(title: "Create Story", animationName: "writing")
-                }
-
-                NavigationLink(destination: YourStoriesView()) {
-                    DashboardTile(title: "Your Stories", animationName: "list")
-                }
-                
             }
-            .padding()
         }
     }
 }
