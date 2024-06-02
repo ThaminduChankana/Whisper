@@ -17,6 +17,7 @@ struct StoryView: View {
                     Text(title)
                         .bold()
                         .italic()
+                        .multilineTextAlignment(.center)
                         .padding(.bottom, 10)
                 }
                 Text(extractStoryBody(from: story))
@@ -28,7 +29,7 @@ struct StoryView: View {
     }
 
     private func extractTitle(from story: String) -> String? {
-        let titlePrefixes = ["Title:", "Title-", "title:-", "title:", "title-", "title:-"]
+        let titlePrefixes = ["Title:", "Title-", "title:-", "title:", "title-", "Title:-"]
         for prefix in titlePrefixes {
             if let range = story.range(of: prefix, options: .caseInsensitive) {
                 let remainingStory = story[range.upperBound...]
@@ -43,7 +44,7 @@ struct StoryView: View {
     }
 
     private func extractStoryBody(from story: String) -> String {
-        let titlePrefixes = ["Title:", "Title-", "title:-", "title:", "title-", "title:-"]
+        let titlePrefixes = ["Title:", "Title-", "title:-", "title:", "title-", "Title:-"]
         for prefix in titlePrefixes {
             if let range = story.range(of: prefix, options: .caseInsensitive) {
                 let remainingStory = story[range.upperBound...]
