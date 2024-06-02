@@ -31,6 +31,10 @@ struct DashboardView: View {
                                 NavigationLink(destination: YourStoriesView()) {
                                     DashboardTile(title: "Your Stories", animationName: "list")
                                 }
+                                
+                                NavigationLink(destination: MusicView()) {
+                                    DashboardTile(title: "Listen", animationName: "listenning")
+                                }
                             }
                             .padding(.horizontal)
                         } else {
@@ -46,6 +50,10 @@ struct DashboardView: View {
                                 
                                 NavigationLink(destination: YourStoriesView()) {
                                     DashboardTile(title: "Your Stories", animationName: "list")
+                                }
+                                
+                                NavigationLink(destination: MusicView()) {
+                                    DashboardTile(title: "Listen", animationName: "listenning")
                                 }
                             }
                             .padding(.horizontal)
