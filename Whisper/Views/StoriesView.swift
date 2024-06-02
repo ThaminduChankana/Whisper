@@ -36,25 +36,63 @@ struct StoriesView: View {
 
 struct StoryDetailView: View {
     var story: FirebaseStory
+    @StateObject private var musicManager = MusicManager()
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .center, spacing: 10) {
-                Text(story.title)
-                    .bold()
-                    .italic()
-                    .multilineTextAlignment(.center)
-                    .padding(.bottom, 10)
-                Text(story.content)
-                    .multilineTextAlignment(.leading)
+        VStack {
+            ScrollView {
+                VStack(alignment: .center, spacing: 10) {
+                    Text(story.title)
+                        .bold()
+                        .italic()
+                        .multilineTextAlignment(.center)
+                        .padding(.bottom, 10)
+                    Text(story.content)
+                        .multilineTextAlignment(.leading)
+                }
+                .padding()
             }
-            .padding()
+            .navigationTitle("Story Details")
+            .onAppear {
+                musicManager.playRandomMusic()
+            }
+            .onDisappear {
+                musicManager.stopMusic()
+            }
+            
+            // Toolbar with buttons
+            HStack {
+                Spacer()
+                Button(action: {
+                    if musicManager.isPlaying {
+                        musicManager.stopMusic()
+                    } else {
+                        musicManager.playRandomMusic()
+                    }
+                }) {
+                    Image(systemName: musicManager.isPlaying ? "pause.circle.fill" : "play.circle.fill")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                }
+                .padding(.horizontal)
+
+                Spacer()
+
+                Button(action: {
+                    musicManager.toggleMute()
+                }) {
+                    Image(systemName: musicManager.isMuted ? "speaker.slash.fill" : "speaker.2.fill")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                }
+                .padding(.horizontal)
+                Spacer()
+            }
+            .padding(.vertical, 10)
         }
-        .navigationTitle("Story Details")
     }
 }
 
 #Preview {
     StoriesView()
 }
-
