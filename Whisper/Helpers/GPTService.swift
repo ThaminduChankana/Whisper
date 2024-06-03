@@ -24,8 +24,8 @@ class GPTService {
 
         let payload: [String: Any] = [
             "numResults": 1,
-            "temperature": 0.7,  // Lowered temperature for more focused output
-            "maxTokens": 500,    // Adjust max tokens if needed
+            "temperature": 0.7,
+            "maxTokens": 1000,
             "messages": [
                 [
                     "text": prompt,
