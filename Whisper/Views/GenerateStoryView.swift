@@ -66,7 +66,7 @@ struct GenerateStoryView: View {
                     
                     Section {
                         Button(action: generateStory) {
-                            Text("Generate Story")
+                            Text("Make Your Story !")
                         }
                         .disabled(isGenerating)
                     }
@@ -89,7 +89,7 @@ struct GenerateStoryView: View {
                     .edgesIgnoringSafeArea(.all)
                 }
             }
-            .navigationTitle("Generate Story")
+            .navigationTitle("Create Your Story")
             .navigationDestination(isPresented: $shouldNavigate) {
                 StoryView(story: generatedStory)
             }

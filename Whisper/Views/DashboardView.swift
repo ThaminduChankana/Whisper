@@ -25,7 +25,7 @@ struct DashboardView: View {
                                 }
                                 
                                 NavigationLink(destination: GenerateStoryView()) {
-                                    DashboardTile(title: "Create Story", animationName: "writing")
+                                    DashboardTile(title: "Make Your Story", animationName: "writing")
                                 }
                                 
                                 NavigationLink(destination: YourStoriesView()) {
@@ -45,7 +45,7 @@ struct DashboardView: View {
                                 }
                                 
                                 NavigationLink(destination: GenerateStoryView()) {
-                                    DashboardTile(title: "Create Story", animationName: "writing")
+                                    DashboardTile(title: "Make Your Story", animationName: "writing")
                                 }
                                 
                                 NavigationLink(destination: YourStoriesView()) {
