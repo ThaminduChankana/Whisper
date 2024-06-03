@@ -12,6 +12,7 @@ class MusicManager: NSObject, ObservableObject, AVAudioPlayerDelegate {
     private var player: AVAudioPlayer?
     private var musicFiles: [URL] = []
     private var currentIndex: Int = 0
+    private var timer: Timer?
     @Published var isPlaying: Bool = false
     @Published var isMuted: Bool = false
     @Published var currentTime: Double = 0
@@ -64,20 +65,21 @@ class MusicManager: NSObject, ObservableObject, AVAudioPlayerDelegate {
             isPlaying = true
             currentFileName = musicURL.lastPathComponent
             duration = player?.duration ?? 0
-            
-            // Update current time
-            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
-                guard let player = self.player else {
-                    timer.invalidate()
-                    return
-                }
-                self.currentTime = player.currentTime
-                if !player.isPlaying {
-                    timer.invalidate()
-                }
-            }
+            startTimer()
         } catch {
             print("Error playing music: \(error.localizedDescription)")
+        }
+    }
+
+    func playPauseMusic() {
+        if isPlaying {
+            player?.pause()
+            isPlaying = false
+            stopTimer()
+        } else {
+            player?.play()
+            isPlaying = true
+            startTimer()
         }
     }
 
@@ -85,6 +87,7 @@ class MusicManager: NSObject, ObservableObject, AVAudioPlayerDelegate {
         player?.stop()
         player?.currentTime = 0
         isPlaying = false
+        stopTimer()
     }
 
     func toggleMute() {
@@ -122,6 +125,7 @@ class MusicManager: NSObject, ObservableObject, AVAudioPlayerDelegate {
         if !isPlaying {
             player?.play()
             isPlaying = true
+            startTimer()
         }
     }
 
@@ -136,5 +140,24 @@ class MusicManager: NSObject, ObservableObject, AVAudioPlayerDelegate {
                 nextTrack()
             }
         }
+    }
+
+    private func startTimer() {
+        stopTimer()  // Stop any existing timer
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] timer in
+            guard let self = self, let player = self.player else {
+                timer.invalidate()
+                return
+            }
+            self.currentTime = player.currentTime
+            if !player.isPlaying {
+                timer.invalidate()
+            }
+        }
+    }
+
+    private func stopTimer() {
+        timer?.invalidate()
+        timer = nil
     }
 }
