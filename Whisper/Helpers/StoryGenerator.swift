@@ -35,7 +35,13 @@ class StoryGenerator {
         }
         
         return """
-            Imagine a wonderful story for \(userInput.childName), a \(userInput.age)-year-old \(userInput.gender.rawValue.lowercased())! Set the tale in the \(userInput.timeline.rawValue) timeline, where \(timeline.lowercased()). the story fit into the \(userInput.storyCategory.rawValue) category, with all the excitement and adventure \(userInput.storyCategory.rawValue.lowercased()) can bring.\(userInput.childName) is feeling \(userInput.mood.rawValue.lowercased()) today, so make sure the story fills their heart with joy! Ready to create a magical adventure for \(userInput.childName)? Let your imagination soar! Please give the response mentioning the story title as "Title:" and be aware to generate the full story without any breaks mentioning end as "The End"
+            Imagine a wonderful story for \(userInput.childName), a \(userInput.age)-year-old \(userInput.gender.rawValue.lowercased())! Set the tale in the \(userInput.timeline.rawValue) timeline, where \(timeline.lowercased()). The story fits into the \(userInput.storyCategory.rawValue) category, with all the excitement and adventure \(userInput.storyCategory.rawValue.lowercased()) can bring. \(userInput.childName) is feeling \(userInput.mood.rawValue.lowercased()) today, so make sure the story fills their heart with joy! Ready to create a magical adventure for \(userInput.childName)? Let your imagination soar! Structure should be as below for every response
+
+            Title: [Generated Story Title]
+
+            [Generated Story Content]
+
+            The End
             """
     }
 }
