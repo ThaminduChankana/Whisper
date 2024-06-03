@@ -124,6 +124,8 @@ struct GenerateStoryView: View {
                 }
             }
         }
+        
+        
     }
     
     func validateInput() -> Bool {

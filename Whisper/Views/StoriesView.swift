@@ -27,7 +27,7 @@ struct StoriesView: View {
         }
         .padding(.top, 10)
         .listStyle(PlainListStyle())
-        .navigationTitle("Firebase Stories")
+        .navigationTitle("Quick Stories")
         .onAppear {
             viewModel.fetchStories()
         }
