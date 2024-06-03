@@ -24,14 +24,15 @@ class GPTService {
 
         let payload: [String: Any] = [
             "numResults": 1,
-            "temperature": 0.7,
+            "temperature": 0.7,  // Lowered temperature for more focused output
+            "maxTokens": 500,    // Adjust max tokens if needed
             "messages": [
                 [
                     "text": prompt,
                     "role": "user"
                 ]
             ],
-            "system": "You are a realistic storyteller. Your responses need to attract children aged between 0 to 10 years"
+            "system": "You are a realistic storyteller. Your responses need to attract children aged between 0 to 10 years and must provide a complete story ending with 'The End'."
         ]
 
         request.httpBody = try? JSONSerialization.data(withJSONObject: payload)
@@ -45,7 +46,22 @@ class GPTService {
             if let responseDict = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
                let outputs = responseDict["outputs"] as? [[String: Any]],
                let text = outputs.first?["text"] as? String {
-                completion(text)
+                
+                // List of possible endings
+                let possibleEndings = ["The End", "the end", "THE END"]
+                
+                // Check if the story ends with any of the possible endings
+                let storyEndsProperly = possibleEndings.contains { ending in
+                    text.range(of: ending, options: .caseInsensitive, range: text.index(text.endIndex, offsetBy: -50)..<text.endIndex) != nil
+                }
+                
+                if storyEndsProperly {
+                    completion(text)
+                } else {
+                    // If the story is incomplete, append "The End"
+                    let completeText = text + "\n\nThe End"
+                    completion(completeText)
+                }
             } else {
                 completion(nil)
             }
@@ -54,3 +70,4 @@ class GPTService {
         task.resume()
     }
 }
+
