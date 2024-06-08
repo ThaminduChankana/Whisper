@@ -9,22 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text("Welcome to Whisper!")
-                    .font(.largeTitle)
-                    .padding()
-
-                NavigationLink(destination: DashboardView()) {
-                    Text("Take a Tour")
-                        .font(.headline)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-            }
-        }
+        NavigationView {
+               OnboardingView()
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

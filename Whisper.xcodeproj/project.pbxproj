@@ -61,6 +61,11 @@
 		51F7067D2C0C3CF000BA76D0 /* writing.json in Resources */ = {isa = PBXBuildFile; fileRef = 51F7067C2C0C3CF000BA76D0 /* writing.json */; };
 		51F706812C0C40CF00BA76D0 /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = 51F706802C0C40CF00BA76D0 /* list.json */; };
 		51F706852C0C44B500BA76D0 /* reading.json in Resources */ = {isa = PBXBuildFile; fileRef = 51F706842C0C44B500BA76D0 /* reading.json */; };
+		E223D7B72C1476F600B3EAC9 /* MagicalWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223D7B62C1476F600B3EAC9 /* MagicalWorldView.swift */; };
+		E223D7BA2C14776400B3EAC9 /* Fairy_Castle_Night.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E223D7B92C14776300B3EAC9 /* Fairy_Castle_Night.usdz */; };
+		E223D7BC2C14791300B3EAC9 /* the-magic-tree.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E223D7BB2C14791200B3EAC9 /* the-magic-tree.mp3 */; };
+		E223D7BE2C14927600B3EAC9 /* StoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E223D7BD2C14927600B3EAC9 /* StoryDetailView.swift */; };
+		E2F878DB2C146159006C0767 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F878DA2C146159006C0767 /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +133,11 @@
 		51F7067C2C0C3CF000BA76D0 /* writing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = writing.json; sourceTree = "<group>"; };
 		51F706802C0C40CF00BA76D0 /* list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
 		51F706842C0C44B500BA76D0 /* reading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reading.json; sourceTree = "<group>"; };
+		E223D7B62C1476F600B3EAC9 /* MagicalWorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicalWorldView.swift; sourceTree = "<group>"; };
+		E223D7B92C14776300B3EAC9 /* Fairy_Castle_Night.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Fairy_Castle_Night.usdz; sourceTree = "<group>"; };
+		E223D7BB2C14791200B3EAC9 /* the-magic-tree.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "the-magic-tree.mp3"; sourceTree = "<group>"; };
+		E223D7BD2C14927600B3EAC9 /* StoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailView.swift; sourceTree = "<group>"; };
+		E2F878DA2C146159006C0767 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +248,9 @@
 				519AD6282C0C4A3F00135F14 /* StoriesView.swift */,
 				519AD62A2C0C4AAD00135F14 /* YourStoriesView.swift */,
 				51AD17E22C0CBEFC00B59F83 /* MusicView.swift */,
+				E2F878DA2C146159006C0767 /* OnboardingView.swift */,
+				E223D7B62C1476F600B3EAC9 /* MagicalWorldView.swift */,
+				E223D7BD2C14927600B3EAC9 /* StoryDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,7 +286,7 @@
 		5182BF062C0BB5DD0019E43C /* Res */ = {
 			isa = PBXGroup;
 			children = (
-				51AD17DD2C0CB80100B59F83 /* Images */,
+				E223D7B82C14774800B3EAC9 /* 3D Models */,
 				51AD17BA2C0C894900B59F83 /* Music */,
 				5182BF072C0BB5E80019E43C /* Animation */,
 			);
@@ -304,6 +317,7 @@
 		51AD17BA2C0C894900B59F83 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				E223D7BB2C14791200B3EAC9 /* the-magic-tree.mp3 */,
 				51AD17D92C0C940D00B59F83 /* music_1.mp3 */,
 				51AD17D52C0C92E700B59F83 /* music_2.mp3 */,
 				51AD17C22C0C925300B59F83 /* music_3.mp3 */,
@@ -323,11 +337,12 @@
 			path = Music;
 			sourceTree = "<group>";
 		};
-		51AD17DD2C0CB80100B59F83 /* Images */ = {
+		E223D7B82C14774800B3EAC9 /* 3D Models */ = {
 			isa = PBXGroup;
 			children = (
+				E223D7B92C14776300B3EAC9 /* Fairy_Castle_Night.usdz */,
 			);
-			path = Images;
+			path = "3D Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,6 +477,7 @@
 				51AD17D62C0C92E700B59F83 /* music_2.mp3 in Resources */,
 				51AD17D02C0C925300B59F83 /* music_12.mp3 in Resources */,
 				514B54392C0BBA4D00EC906C /* book.json in Resources */,
+				E223D7BC2C14791300B3EAC9 /* the-magic-tree.mp3 in Resources */,
 				51AD17CE2C0C925300B59F83 /* music_4.mp3 in Resources */,
 				51AD17C82C0C925300B59F83 /* music_9.mp3 in Resources */,
 				51AD17D42C0C925300B59F83 /* music_14.mp3 in Resources */,
@@ -469,6 +485,7 @@
 				5182BEDB2C0BB5770019E43C /* Preview Assets.xcassets in Resources */,
 				51F706812C0C40CF00BA76D0 /* list.json in Resources */,
 				51AD17CD2C0C925300B59F83 /* music_15.mp3 in Resources */,
+				E223D7BA2C14776400B3EAC9 /* Fairy_Castle_Night.usdz in Resources */,
 				51AD17CB2C0C925300B59F83 /* music_6.mp3 in Resources */,
 				51AD17C92C0C925300B59F83 /* music_8.mp3 in Resources */,
 				5182BED82C0BB5770019E43C /* Assets.xcassets in Resources */,
@@ -501,16 +518,19 @@
 				51AD17B92C0C7C4C00B59F83 /* StoriesViewModel.swift in Sources */,
 				5182BF102C0BB70F0019E43C /* StoryView.swift in Sources */,
 				514B543B2C0BBDAC00EC906C /* GenerateStoryView.swift in Sources */,
+				E2F878DB2C146159006C0767 /* OnboardingView.swift in Sources */,
 				51AD17B72C0C7BB100B59F83 /* FirebaseStory.swift in Sources */,
 				5182BEDD2C0BB5770019E43C /* Persistence.swift in Sources */,
 				5182BED62C0BB5750019E43C /* ContentView.swift in Sources */,
 				5182BF0B2C0BB63F0019E43C /* LottieView.swift in Sources */,
+				E223D7B72C1476F600B3EAC9 /* MagicalWorldView.swift in Sources */,
 				5182BF122C0BB73A0019E43C /* DataModels.swift in Sources */,
 				51AD17E32C0CBEFC00B59F83 /* MusicView.swift in Sources */,
 				51F7067B2C0C340600BA76D0 /* DashboardView.swift in Sources */,
 				51AD17DC2C0C951200B59F83 /* MusicManager.swift in Sources */,
 				519AD62B2C0C4AAD00135F14 /* YourStoriesView.swift in Sources */,
 				5182BF162C0BB7830019E43C /* StoryGenerator.swift in Sources */,
+				E223D7BE2C14927600B3EAC9 /* StoryDetailView.swift in Sources */,
 				5182BEE02C0BB5770019E43C /* Whisper.xcdatamodeld in Sources */,
 				519AD6292C0C4A3F00135F14 /* StoriesView.swift in Sources */,
 				5182BED42C0BB5750019E43C /* WhisperApp.swift in Sources */,
@@ -681,11 +701,14 @@
 				DEVELOPMENT_TEAM = 53AS9F6K9H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is needed";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -710,11 +733,14 @@
 				DEVELOPMENT_TEAM = 53AS9F6K9H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is needed";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

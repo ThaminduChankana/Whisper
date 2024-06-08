@@ -14,18 +14,28 @@ struct YourStoriesView: View {
     private var stories: FetchedResults<Story>
     
     @Environment(\.managedObjectContext) private var viewContext
+
+    private let images = ["story1", "story2", "story3", "story4", "story5"]
     
     var body: some View {
         List {
             ForEach(stories) { story in
                 NavigationLink(destination: StoryView(story: story.content ?? "")) {
-                    VStack(alignment: .leading) {
-                        Text(story.title ?? "Untitled")
-                            .font(.headline)
-                        Text(story.createdAt ?? Date(), style: .date)
-                            .font(.subheadline)
+                    HStack {
+                        Image(images.randomElement() ?? "image1")
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .cornerRadius(10)
+                            .padding(.trailing, 10)
+
+                        VStack(alignment: .leading) {
+                            Text(story.title ?? "Untitled")
+                                .font(.headline)
+                            Text(story.createdAt ?? Date(), style: .date)
+                                .font(.subheadline)
+                        }
+                        .padding(.vertical, 5) // Adds space between each story
                     }
-                    .padding(.vertical, 5) // Adds space between each story
                 }
                 .listRowSeparator(.automatic).padding(5)
             }
@@ -55,3 +65,4 @@ struct YourStoriesView: View {
 #Preview {
     YourStoriesView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
+

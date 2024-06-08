@@ -1,9 +1,3 @@
-//
-//  StoryView.swift
-//  Whisper
-//
-//  Created by Thamindu Gamage on 2024-06-01.
-//
 import SwiftUI
 
 struct StoryView: View {
@@ -20,6 +14,14 @@ struct StoryView: View {
                             .italic()
                             .multilineTextAlignment(.center)
                             .padding(.bottom, 10)
+                    
+                        Image("genarate")
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 200, height: 200)
+                                                .clipShape(Circle())
+                                                .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
+                                                .padding(.bottom, 10)
                     }
                     Text(extractStoryBody(from: story))
                         .multilineTextAlignment(.leading)
@@ -96,5 +98,6 @@ struct StoryView: View {
 }
 
 #Preview {
-    StoryView(story: "Your Story!")
+    StoryView(story: "Title: The Brave Little Toaster\n\nOnce upon a time in a small village, there lived a brave little toaster...")
 }
+
