@@ -1,3 +1,10 @@
+//
+//  DashboardView.swift
+//  Whisper
+//
+//  Created by Thamindu Gamage on 2024-06-02.
+//
+
 import SwiftUI
 
 struct DashboardView: View {
@@ -58,9 +65,6 @@ struct DashboardView: View {
                 }
                 .padding(.top)
             }
-        }
-        .onAppear {
-            print("DashboardView appeared") // Debug statement
         }
     }
 }
