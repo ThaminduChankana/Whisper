@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510663572C18A0E200E8101F /* FirebaseStoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510663562C18A0E200E8101F /* FirebaseStoryTests.swift */; };
+		510663592C18A26E00E8101F /* MusicManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510663582C18A26E00E8101F /* MusicManagerTests.swift */; };
+		5106635B2C18A2AB00E8101F /* UserInputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5106635A2C18A2AB00E8101F /* UserInputTests.swift */; };
+		5106635D2C18A40800E8101F /* music_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5106635C2C18A40800E8101F /* music_1.mp3 */; };
 		514B54392C0BBA4D00EC906C /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = 514B54382C0BBA4D00EC906C /* book.json */; };
 		514B543B2C0BBDAC00EC906C /* GenerateStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514B543A2C0BBDAC00EC906C /* GenerateStoryView.swift */; };
 		5182BED42C0BB5750019E43C /* WhisperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5182BED32C0BB5750019E43C /* WhisperApp.swift */; };
@@ -86,6 +90,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		510663562C18A0E200E8101F /* FirebaseStoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStoryTests.swift; sourceTree = "<group>"; };
+		510663582C18A26E00E8101F /* MusicManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManagerTests.swift; sourceTree = "<group>"; };
+		5106635A2C18A2AB00E8101F /* UserInputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputTests.swift; sourceTree = "<group>"; };
+		5106635C2C18A40800E8101F /* music_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music_1.mp3; sourceTree = "<group>"; };
 		514B54382C0BBA4D00EC906C /* book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
 		514B543A2C0BBDAC00EC906C /* GenerateStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateStoryView.swift; sourceTree = "<group>"; };
 		5182BED02C0BB5750019E43C /* Whisper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whisper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,7 +233,11 @@
 		5182BEE82C0BB5770019E43C /* WhisperTests */ = {
 			isa = PBXGroup;
 			children = (
+				5106635C2C18A40800E8101F /* music_1.mp3 */,
 				5182BEE92C0BB5770019E43C /* WhisperTests.swift */,
+				510663562C18A0E200E8101F /* FirebaseStoryTests.swift */,
+				510663582C18A26E00E8101F /* MusicManagerTests.swift */,
+				5106635A2C18A2AB00E8101F /* UserInputTests.swift */,
 			);
 			path = WhisperTests;
 			sourceTree = "<group>";
@@ -498,6 +510,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5106635D2C18A40800E8101F /* music_1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +555,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510663592C18A26E00E8101F /* MusicManagerTests.swift in Sources */,
+				5106635B2C18A2AB00E8101F /* UserInputTests.swift in Sources */,
+				510663572C18A0E200E8101F /* FirebaseStoryTests.swift in Sources */,
 				5182BEEA2C0BB5770019E43C /* WhisperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

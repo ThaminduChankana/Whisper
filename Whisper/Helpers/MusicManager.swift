@@ -10,8 +10,8 @@ import SwiftUI
 
 class MusicManager: NSObject, ObservableObject, AVAudioPlayerDelegate {
     private var player: AVAudioPlayer?
-    private var musicFiles: [URL] = []
-    private var currentIndex: Int = 0
+    var musicFiles: [URL] = []
+    var currentIndex: Int = 0
     private var timer: Timer?
     @Published var isPlaying: Bool = false
     @Published var isMuted: Bool = false
